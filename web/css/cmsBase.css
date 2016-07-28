@@ -1,0 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25.Tem.2016, 23:37:09
+    Author     : Murat Çelik
+*/
+
+.breadcrumb { padding-top:  2px !important; padding-bottom:  2px !important; margin-top: 10px; border-radius: 1px !important; border:1px solid #e7e7e7; }
+
+#loading-layout { display: none; position: fixed; background-color: rgba(0, 0, 0, 0.5);; margin:0px; left: 0px; right: 0px; bottom: 0px; top: 0px; z-index:9999999;}
