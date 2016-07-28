@@ -6,26 +6,38 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\PostComment */
 
-$this->title = $model->id_comment;
-$this->params['breadcrumbs'][] = ['label' => 'Post Comments', 'url' => ['index']];
+$this->title = $model->author;
+$this->params['breadcrumbs'][] = ['label' => 'Yorumlar', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-comment-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) ?>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id_comment], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id_comment], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <?= DetailView::widget([
+        <p class="pull-right">
+            
+            <?php
+//            Html::a('Onayla', ['Status', 'id' => $model->id_comment], [
+//                'class' => 'btn btn-success',
+//                'data' => [
+//                    'confirm' => 'Onaylamak istediğinize emin misiniz ?',
+//                    'method' => 'post',
+//                ],
+//            ])
+//            ?>
+            <?php
+//            Html::a('Pasife Al', ['delete', 'id' => $model->id_comment], [
+//                'class' => 'btn btn-warning',
+//                'data' => [
+//                    'confirm' => 'Are you sure you want to delete this item?',
+//                    'method' => 'post',
+//                ],
+//            ])
+            ?>
+        </p>
+    </h1>
+    <?=
+    DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id_comment',
@@ -38,6 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'datetime_create',
             'datetime_update',
         ],
-    ]) ?>
+    ])
+    ?>
 
 </div>

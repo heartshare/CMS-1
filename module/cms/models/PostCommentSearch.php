@@ -1,6 +1,6 @@
 <?php
 
-namespace app\module\cms\models;;
+namespace app\module\cms\models;
 
 use Yii;
 use yii\base\Model;
@@ -12,6 +12,8 @@ use app\models\PostComment;
  */
 class PostCommentSearch extends PostComment
 {
+    
+    public $post_title;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class PostCommentSearch extends PostComment
     {
         return [
             [['id_comment', 'id_post'], 'integer'],
-            [['author', 'author_email', 'author_IP', 'content', 'datetime_create', 'datetime_update'], 'safe'],
+            [['author', 'author_email', 'author_IP', 'content', 'datetime_create', 'datetime_update','post_title'], 'safe'],
             [['status'], 'boolean'],
         ];
     }
@@ -42,13 +44,17 @@ class PostCommentSearch extends PostComment
      */
     public function search($params)
     {
-        $query = PostComment::find();
+        
+        $query = PostComment::find()->alias('t');
 
+        $query->joinWith(['post as post']);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            
         ]);
+        $dataProvider->sort->attributes['post_title'] = ['asc' => ['post.title' => SORT_ASC],'desc' => ['post.title' => SORT_DESC]];
 
         $this->load($params);
 
@@ -62,15 +68,18 @@ class PostCommentSearch extends PostComment
         $query->andFilterWhere([
             'id_comment' => $this->id_comment,
             'id_post' => $this->id_post,
-            'status' => $this->status,
+            't.status' => $this->status,
             'datetime_create' => $this->datetime_create,
             'datetime_update' => $this->datetime_update,
         ]);
+       
 
         $query->andFilterWhere(['like', 'author', $this->author])
             ->andFilterWhere(['like', 'author_email', $this->author_email])
             ->andFilterWhere(['like', 'author_IP', $this->author_IP])
+            ->andFilterWhere(['like', 'post.title', $this->post_title])
             ->andFilterWhere(['like', 'content', $this->content]);
+         
 
         return $dataProvider;
     }

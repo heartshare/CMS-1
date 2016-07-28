@@ -24,6 +24,8 @@ class PostComment extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    
+    
     public static function tableName()
     {
         return 'cms_post_comment';
@@ -51,15 +53,15 @@ class PostComment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_comment'      => 'Id Comment',
-            'id_post'         => 'Id Post',
-            'author'          => 'Author',
-            'author_email'    => 'Author Email',
-            'author_IP'       => 'Author  Ip',
-            'content'         => 'Content',
-            'status'          => 'Status',
-            'datetime_create' => 'Datetime Create',
-            'datetime_update' => 'Datetime Update',
+            'id_comment'      => 'Yorum ID',
+            'id_post'         => 'Gönderi ID',
+            'author'          => 'Ad Soyad',
+            'author_email'    => 'Email',
+            'author_IP'       => 'IP',
+            'content'         => 'Yorum',
+            'status'          => 'Durum',
+            'datetime_create' => 'Oluşturma  Tarihi',
+            'datetime_update' => 'Değişiklik Tarihi',
         ];
     }
 
@@ -67,6 +69,10 @@ class PostComment extends \yii\db\ActiveRecord
      * @return \yii\db\ActiveQuery
      */
     public function getPost(){
-        return $this->hasOne(CmsPost::className(), ['id_post' => 'id_post']);
+        return $this->hasOne(Post::className(), ['id_post' => 'id_post']);
+    }
+    
+    public function getLabelStatus(){
+        return $this->status ==1 ? '<i class="glyphicon glyphicon-ok-sign" style="color:green;"></i>' : '<i class="glyphicon glyphicon-remove-sign" style="color:red;"></i>';
     }
 }
