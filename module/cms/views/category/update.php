@@ -6,9 +6,9 @@ use yii\helpers\Html;
 /* @var $model app\models\Category */
 
 $this->title = 'Kategori Güncelle : ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Kategoriler', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id_category]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Güncelle';
 ?>
 <div class="category-update">
     <h1><?= Html::encode($this->title) ?></h1>

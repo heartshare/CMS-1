@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Category */
 
 $this->title = 'Yeni Kategori';
-$this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Kategoriler', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
