@@ -25,13 +25,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id_tag',
-            'id_user',
+            [
+                'attribute' => 'id_user',
+                'value' => function ($data) { return $data->user->username;},
+                'format' => 'html',
+            ],
             'name',
-            'status:boolean',
+             [
+                'attribute' => 'status',
+                'filter' => array(1 => "Aktif", 0 => "Pasif"),
+                'value' => function ($data) { return $data->labelStatus;},
+                'format' => 'html',
+                'contentOptions' => ['style' => 'width:50px; text-align:center']
+            ],
             'datetime_create',
             // 'datetime_update',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','template' => '{view} {update}'],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>

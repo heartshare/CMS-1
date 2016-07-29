@@ -48,12 +48,12 @@ class Tag extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_tag' => 'Id Tag',
-            'id_user' => 'Id User',
-            'name' => 'Name',
-            'status' => 'Status',
-            'datetime_create' => 'Datetime Create',
-            'datetime_update' => 'Datetime Update',
+            'id_tag' => 'Etiket ID',
+            'id_user' => 'Kullanıcı İsmi',
+            'name' => 'İsim',
+            'status' => 'Durum',
+            'datetime_create' => 'Oluşturulma Tarihi',
+            'datetime_update' => 'Güncelleme Tarihi',
         ];
     }
 
@@ -71,5 +71,8 @@ class Tag extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'id_user']);
+    }
+     public function getLabelStatus(){
+        return $this->status ==1 ? '<i class="glyphicon glyphicon-ok-sign" style="color:green;"></i>' : '<i class="glyphicon glyphicon-remove-sign" style="color:red;"></i>';
     }
 }
