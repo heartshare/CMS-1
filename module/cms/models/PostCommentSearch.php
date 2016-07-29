@@ -26,6 +26,7 @@ class PostCommentSearch extends PostComment
         ];
     }
 
+
     /**
      * @inheritdoc
      */
