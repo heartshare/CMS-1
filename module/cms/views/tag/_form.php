@@ -12,18 +12,18 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_user')->textInput() ?>
+    <?php // $form->field($model, 'id_user')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->checkbox() ?>
+    <?= $form->field($model, 'status')->dropDownList(array(1 => 'Aktif', 0 => 'Pasif')); ?>
 
-    <?= $form->field($model, 'datetime_create')->textInput() ?>
+    <?php // $form->field($model, 'datetime_create')->textInput() ?>
 
-    <?= $form->field($model, 'datetime_update')->textInput() ?>
+    <?php // $form->field($model, 'datetime_update')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Oluştur' : 'Güncelle', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

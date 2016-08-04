@@ -67,7 +67,11 @@ use app\assets\AppAsset;
             <div class="row">
                 <div class="col-lg-12">
                     <!--<button onclick="startLoading('');">Click Me</button>-->
-                    <?=Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],]);?>
+                    
+                    <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs']  : [],'homeLink' => [ 'label' => Yii::t('yii', 'Home'),'url' => 'index.php?r=cms']]); ?>
+                    <?php foreach (Yii::$app->session->getAllFlashes() as $key => $message):?>
+                        <?= '<div class="alert alert-' . $key . ' fade in" ><a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>' . $message . '</div>';?>
+                    <?php endforeach;?>
                     <?= $content ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -108,4 +112,4 @@ use app\assets\AppAsset;
 </body>
 
 </html>
-<?php  $this->endPage() ?>
+<?php $this->endPage() ?>

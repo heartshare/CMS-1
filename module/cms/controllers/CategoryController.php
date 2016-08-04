@@ -37,6 +37,7 @@ class CategoryController extends BackendController
     public function actionIndex()
     {
         $searchModel = new CategorySearch();
+        
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -65,9 +66,6 @@ class CategoryController extends BackendController
     public function actionCreate()
     {
         $model                  = new Category();
-        $model->id_user         = Tools::getUserId();
-        $model->datetime_create = Tools::getDateTimeNow();
-        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_category]);
         } else {
@@ -85,9 +83,8 @@ class CategoryController extends BackendController
      */
     public function actionUpdate($id)
     {
-        $model                  = $this->findModel($id);
-        $model->datetime_update = Tools::getDateTimeNow();
-
+        $model = $this->findModel($id);
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_category]);
         } else {

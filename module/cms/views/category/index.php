@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="category-index">
 
     <h1><?= Html::encode($this->title) ?> <?= Html::a('Yeni Oluştur', ['create'], ['class' => 'btn btn-success pull-right']) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php //echo '<pre>'; var_dump($searchModel); // echo $this->render('_search', ['model' => $searchModel]); ?>
     <?php Pjax::begin(); ?> 
     <?=
     GridView::widget([
