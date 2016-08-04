@@ -13,6 +13,9 @@ $config = [
         ],
     ],
     'components' => [
+        'Tools' => [
+            'class' => 'app\components\ToolsComponent',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '111111',

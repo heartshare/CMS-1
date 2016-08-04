@@ -17,7 +17,7 @@ use Yii;
  * @property User    $user
  * @property Post    $post
  */
-class PostMetadata extends \yii\db\ActiveRecord
+class PostMetadata extends \app\components\CmsModel
 {
     /**
      * @inheritdoc

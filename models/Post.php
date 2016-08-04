@@ -30,7 +30,7 @@ use Yii;
  * @property PostMetadata[] $postMetadatas
  * @property PostTag[]      $postTags
  */
-class Post extends \yii\db\ActiveRecord
+class Post extends \app\components\CmsModel
 {
     /**
      * @inheritdoc

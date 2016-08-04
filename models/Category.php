@@ -16,7 +16,7 @@ use Yii;
  * @property User    $user
  * @property Post[]  $posts
  */
-class Category extends \yii\db\ActiveRecord {
+class Category extends \app\components\CmsModel {
 
     /**
      * @inheritdoc

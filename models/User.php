@@ -28,7 +28,7 @@ use Yii;
  * @property Tag[]          $tags
  * @property Taxonomy[]     $taxonomies
  */
-class User extends \yii\db\ActiveRecord
+class User extends \app\components\CmsModel
 {
     /**
      * @inheritdoc

@@ -13,7 +13,7 @@ use Yii;
  *
  * @property Post    $post
  */
-class PostDocument extends \yii\db\ActiveRecord
+class PostDocument extends \app\components\CmsModel
 {
     /**
      * @inheritdoc

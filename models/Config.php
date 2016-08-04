@@ -13,7 +13,7 @@ use Yii;
  * @property string  $value
  * @property string  $type
  */
-class Config extends \yii\db\ActiveRecord
+class Config extends \app\components\CmsModel
 {
     /**
      * @inheritdoc

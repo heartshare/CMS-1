@@ -17,7 +17,7 @@ use Yii;
  * @property Post[] $posts
  * @property User   $user
  */
-class Taxonomy extends \yii\db\ActiveRecord
+class Taxonomy extends \app\components\CmsModel
 {
     /**
      * @inheritdoc

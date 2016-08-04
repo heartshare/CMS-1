@@ -19,7 +19,7 @@ use Yii;
  *
  * @property Post    $post
  */
-class PostComment extends \yii\db\ActiveRecord
+class PostComment extends \app\components\CmsModel
 {
     /**
      * @inheritdoc
