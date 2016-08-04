@@ -66,7 +66,7 @@ use app\assets\AppAsset;
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <button onclick="startLoading('');">Click Me</button>
+                    <!--<button onclick="startLoading('');">Click Me</button>-->
                     <?=Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],]);?>
                     <?= $content ?>
                 </div>
