@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'content',
             // 'status:boolean',
             // 'datetime_update',
-            ['class' => 'yii\grid\ActionColumn', 'template' => '{view}', 'contentOptions' => ['style' => 'width:20px;'],],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{view}{update}', 'contentOptions' => ['style' => 'width:20px;'],],
         ],
     ]);
     ?>

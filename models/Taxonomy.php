@@ -14,11 +14,17 @@ use Yii;
  * @property string  $datetime_create
  * @property string  $datetime_update
  *
- * @property Post[] $posts
- * @property User   $user
+ * @property Post[]  $posts
+ * @property User    $user
  */
 class Taxonomy extends \app\components\CmsModel
 {
+    const TAXONOMY_ARTICLE      = 1; // Makale
+    const TAXONOMY_NEWS         = 2; // Haber
+    const TAXONOMY_ANNOUNCEMENT = 3; // Duyuru
+    const TAXONOMY_GALLERY      = 4; // Galeri
+    const TAXONOMY_PAGE         = 5; // Sayfa
+
     /**
      * @inheritdoc
      */
@@ -56,6 +62,10 @@ class Taxonomy extends \app\components\CmsModel
             'datetime_update' => 'Datetime Update',
         ];
     }
+    
+    public function getTaxomonies(){
+        return ['Makale'=>self::TAXONOMY_ARTICLE,'Haber'=>self::TAXONOMY_NEWS,'Duyuru'=>self::TAXONOMY_ANNOUNCEMENT,'Galeri'=>self::TAXONOMY_GALLERY,'Sayfa'=>self::TAXONOMY_PAGE];
+    }
 
     /**
      * @return \yii\db\ActiveQuery
@@ -68,7 +78,7 @@ class Taxonomy extends \app\components\CmsModel
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdUser()
+    public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'id_user']);
     }

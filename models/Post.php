@@ -65,19 +65,19 @@ class Post extends \app\components\CmsModel
     {
         return [
             'id_post'          => 'Id Post',
-            'id_user'          => 'Id User',
-            'id_category'      => 'Id Category',
-            'id_taxonomy'      => 'Id Taxonomy',
-            'content'          => 'Content',
-            'title'            => 'Title',
-            'cover_photo'      => 'Cover Photo',
-            'status'           => 'Status',
-            'comment_status'   => 'Comment Status',
-            'comment_count'    => 'Comment Count',
-            'display_count'    => 'Display Count',
-            'datetime_publish' => 'Datetime Publish',
-            'datetime_create'  => 'Datetime Create',
-            'datetime_update'  => 'Datetime Update',
+            'id_user'          => 'Kullanıcı',
+            'id_category'      => 'Kategori',
+            'id_taxonomy'      => 'Tip',
+            'content'          => 'İçerik',
+            'title'            => 'Başlık',
+            'cover_photo'      => 'Kapak Fotoğrafı',
+            'status'           => 'Durum',
+            'comment_status'   => 'Yorum Durumu',
+            'comment_count'    => 'Yorum',
+            'display_count'    => 'Görüntülenme',
+            'datetime_publish' => 'Yayınlama Tarihi',
+            'datetime_create'  => 'Oluşturma Tarihi',
+            'datetime_update'  => 'Güncelleme Tarihi',
         ];
     }
 
@@ -128,5 +128,13 @@ class Post extends \app\components\CmsModel
      */
     public function getPostTags(){
         return $this->hasMany(PostTag::className(), ['id_post' => 'id_post']);
+    }
+    
+    
+    public function getLabelStatus() {
+        return $this->status == 1 ? '<i class="glyphicon glyphicon-ok-sign" style="color:green;"></i>' : '<i class="glyphicon glyphicon-remove-sign" style="color:red;"></i>';
+    }
+    public function getLabelCommentStatus() {
+        return $this->comment_status == 1 ? '<i class="glyphicon glyphicon-ok-sign" style="color:green;"></i>' : '<i class="glyphicon glyphicon-remove-sign" style="color:red;"></i>';
     }
 }
