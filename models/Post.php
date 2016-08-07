@@ -32,6 +32,8 @@ use Yii;
  */
 class Post extends \app\components\CmsModel
 {
+
+    public $coverFile;
     /**
      * @inheritdoc
      */
@@ -46,12 +48,13 @@ class Post extends \app\components\CmsModel
     public function rules()
     {
         return [
-            [['id_user', 'id_taxonomy', 'content', 'title', 'cover_photo'], 'required'],
+            [['id_user', 'id_taxonomy', 'content', 'title', 'cover_photo','coverFile'], 'required'],
             [['id_user', 'id_category', 'id_taxonomy', 'comment_count', 'display_count'], 'integer'],
             [['content'], 'string'],
             [['status', 'comment_status'], 'boolean'],
             [['datetime_publish', 'datetime_create', 'datetime_update'], 'safe'],
             [['title', 'cover_photo'], 'string', 'max' => 1024],
+            [['coverFile'],'file'],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
             [['id_category'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['id_category' => 'id_category']],
             [['id_taxonomy'], 'exist', 'skipOnError' => true, 'targetClass' => Taxonomy::className(), 'targetAttribute' => ['id_taxonomy' => 'id_taxonomy']],
@@ -64,7 +67,7 @@ class Post extends \app\components\CmsModel
     public function attributeLabels()
     {
         return [
-            'id_post'          => 'Id Post',
+            'id_post'          => 'ID',
             'id_user'          => 'Kullanıcı',
             'id_category'      => 'Kategori',
             'id_taxonomy'      => 'Tip',
@@ -78,6 +81,8 @@ class Post extends \app\components\CmsModel
             'datetime_publish' => 'Yayınlama Tarihi',
             'datetime_create'  => 'Oluşturma Tarihi',
             'datetime_update'  => 'Güncelleme Tarihi',
+
+            'coverFile'        =>'Kapak Fotoğrafı',
         ];
     }
 

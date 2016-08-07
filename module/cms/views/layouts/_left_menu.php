@@ -11,7 +11,7 @@ use yii\helpers\Url; ?>
             <li>
                 <a href="#"><i class="fa fa-newspaper-o"></i> Gönderiler<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="<?= Url::to('index.php?r=cms/post/index') ?>">   <i class="fa fa-folder-open-o fa-fw"></i>&nbsp;Makaleler</a> </li>
+                    <li><a href="<?= Url::to('index.php?r=cms/post/articleindex') ?>">   <i class="fa fa-folder-open-o fa-fw"></i>&nbsp;Makaleler</a> </li>
                     <li><a href="<?= Url::to('index.php?r=cms/post/index') ?>">   <i class="fa fa-newspaper-o fa-fw"></i>&nbsp;Haberler</a> </li>
                     <li><a href="<?= Url::to('index.php?r=cms/post/index') ?>">   <i class="fa fa-bell fa-fw"></i>&nbsp;Duyurular</a></li>
                     <li><a href="<?= Url::to('index.php?r=cms/post/index') ?>">   <i class="fa fa fa-image fa-fw" ></i>&nbsp;Albümler</a></li>
