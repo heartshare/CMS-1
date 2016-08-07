@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/XAMPP/htdocs/CMS/module/cms/views/post/index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/CMS/models/Post.php</file>
+            <file>file:/Applications/XAMPP/htdocs/CMS/module/cms/controllers/PostController.php</file>
+            <file>file:/Applications/XAMPP/htdocs/CMS/components/ToolsComponent.php</file>
+            <file>file:/Applications/XAMPP/htdocs/CMS/module/cms/views/post/article/view.php</file>
+            <file>file:/Applications/XAMPP/htdocs/CMS/module/cms/views/post/article/_form.php</file>
         </group>
     </open-files>
 </project-private>
